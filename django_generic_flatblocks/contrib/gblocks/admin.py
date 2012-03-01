@@ -14,6 +14,7 @@ if 'grappellifit' in settings.INSTALLED_APPS and 'modeltranslation' in settings.
 
     class GblockAdmin(TranslationAdmin):
         class Media:
+            # FIXME: This might clash with TranslationAdmin.Media.js ..
             js = GBLOCK_JS
 else:
 
