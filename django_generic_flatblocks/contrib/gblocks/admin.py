@@ -2,10 +2,14 @@ from django.conf import settings
 from django.contrib import admin
 from django_generic_flatblocks.contrib.gblocks.models import *
 
-if getattr(settings, 'GBLOCK_GRPAPPELLI_TINYMCE', False):
+GRPAPPELLI_TINYMCE      = getattr(settings, 'GBLOCK_GRPAPPELLI_TINYMCE', False)
+GRPAPPELLI_TINYMCE_SRC  = getattr(settings, 'GBLOCK_GRPAPPELLI_TINYMCE_SRC',  'admin/tinymce/jscripts/tiny_mce/tiny_mce.js')
+GRPAPPELLI_TINYMCE_CONF = getattr(settings, 'GBLOCK_GRPAPPELLI_TINYMCE_CONF', 'website/js/tinymce_setup.js')
+
+if GRPAPPELLI_TINYMCE:
     GBLOCK_JS = [
-        '%sgrappelli/tinymce/jscripts/tiny_mce/tiny_mce.js' % settings.STATIC_URL,
-        '%swebsite/js/tinymce_setup.js' % settings.STATIC_URL]
+        '%s%s' % (settings.STATIC_URL, GRPAPPELLI_TINYMCE_SRC),
+        '%s%s' % (settings.STATIC_URL, GRPAPPELLI_TINYMCE_CONF)]
 else:
     GBLOCK_JS = []
 
