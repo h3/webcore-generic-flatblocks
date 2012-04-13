@@ -15,7 +15,7 @@ translator.register(Text, TextOptions)
 
 
 class ImageAndLinkOptions(TranslationOptions):
-    fields = ('link',)
+    fields = ('link', 'image')
 translator.register(ImageAndLink, ImageAndLinkOptions)
 
 
