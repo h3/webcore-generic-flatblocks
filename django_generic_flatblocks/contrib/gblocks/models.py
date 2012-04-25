@@ -63,3 +63,22 @@ class TitleTextAndImage(models.Model):
 
     def __unicode__(self):
         return "(TitleTextAndImageBlock) %s" % self.title
+
+
+class TitleLinkAndImage(models.Model):
+    title = models.CharField(_('title'), max_length=255, blank=True)
+    link  = models.CharField(_('link'), max_length=255, blank=True)
+    image = models.ImageField(_('image'), upload_to='gblocks/', blank=True)
+
+    def __unicode__(self):
+        return "(TitleLinkAndImageBlock) %s" % self.title
+
+
+class TitleLinkTextAndImage(models.Model):
+    title = models.CharField(_('title'), max_length=255, blank=True)
+    link  = models.CharField(_('link'), max_length=255, blank=True)
+    text = models.TextField(_('text'), blank=True)
+    image = models.ImageField(_('image'), upload_to='gblocks/', blank=True)
+
+    def __unicode__(self):
+        return "(TitleLinkTextAndImageBlock) %s" % self.title

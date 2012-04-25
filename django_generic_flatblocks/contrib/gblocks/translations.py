@@ -35,5 +35,15 @@ translator.register(TitleAndText, TitleAndTextOptions)
 
 
 class TitleTextAndImageOptions(TranslationOptions):
-    fields = ('title', 'text',)
+    fields = ('title', 'text', 'image')
 translator.register(TitleTextAndImage, TitleTextAndImageOptions)
+
+
+class TitleLinkAndImageOptions(TranslationOptions):
+    fields = ('title', 'link', 'image')
+translator.register(TitleLinkAndImage, TitleLinkAndImageOptions)
+
+
+class TitleLinkTextAndImageOptions(TranslationOptions):
+    fields = ('title', 'link', 'text', 'image')
+translator.register(TitleLinkTextAndImage, TitleLinkTextAndImageOptions)
