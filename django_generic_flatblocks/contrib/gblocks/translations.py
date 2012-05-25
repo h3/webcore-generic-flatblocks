@@ -25,7 +25,7 @@ translator.register(TitleAndFile, TitleAndFileOptions)
 
 
 class TitleTextAndFileOptions(TranslationOptions):
-    fields = ('title',)
+    fields = ('title', 'text', 'file')
 translator.register(TitleTextAndFile, TitleTextAndFileOptions)
 
 
