@@ -20,7 +20,7 @@ translator.register(ImageAndLink, ImageAndLinkOptions)
 
 
 class TitleAndFileOptions(TranslationOptions):
-    fields = ('title',)
+    fields = ('title', 'image')
 translator.register(TitleAndFile, TitleAndFileOptions)
 
 
